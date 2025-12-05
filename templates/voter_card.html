@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter ID Card</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+            background: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .id-card {
+            width: 600px;
+            padding: 0;
+            border-radius: 10px;
+            border: 2px solid #999;
+            box-shadow: 0 0 15px rgba(0,0,0,0.25);
+            overflow: hidden;
+            background: white;
+            position: relative;
+        }
+
+        .top-strip {
+            background: #ffcc80;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #4e342e;
+        }
+
+        .content { padding: 20px 30px; }
+
+        .info div {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .label {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+
+        .photo-box {
+            width: 130px;
+            height: 160px;
+            border: 2px solid #2e7d32;
+            position: absolute;
+            right: 30px;
+            top: 110px;
+            background: #e8f5e9;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .bottom-strip {
+            background: #a5d6a7;
+            padding: 10px;
+            text-align: center;
+            color: #1b5e20;
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="id-card">
+
+    <div class="top-strip">
+        भारत निर्वाचन आयोग • Election Commission of India
+    </div>
+
+    <div class="content">
+
+        <h2 style="text-align:center; color:#2e7d32; margin-top:5px;">
+            ELECTOR PHOTO IDENTITY CARD (EPIC)
+        </h2>
+
+        <div class="info">
+            <div><span class="label">Name:</span> {{ data.name }}</div>
+            <div><span class="label">Father Name:</span> {{ data.father_name }}</div>
+            <div><span class="label">Date of Birth:</span> {{ data.dob }}</div>
+            <div><span class="label">Address:</span> {{ data.address }}</div>
+            <div><span class="label">Voter ID No:</span> {{ data.voter_id_no }}</div>
+        </div>
+
+        <div class="photo-box">
+            <img src="{{ data.photos.url }}">
+        </div>
+
+    </div>
+
+    <div class="bottom-strip">
+        Government of India • Electoral Registration
+    </div>
+
+</div>
+
+</body>
+</html>

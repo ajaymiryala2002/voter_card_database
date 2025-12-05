@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voter Form</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            padding: 40px;
+        }
+        .form-box {
+            max-width: 600px;
+            background: #fff;
+            margin: auto;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+        .form-label {
+            font-weight: 600;
+        }
+        .photo-box {
+            border: 2px dashed #aaa;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="form-box">
+    <h3 class="text-center mb-3">Voter Card Application Form</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <div class="row mb-3">
+            <div class="col-4">
+                <label class="form-label">Full Name</label>
+            </div>
+            <div class="col-8">
+                {{ form.full_name }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-4">
+                <label class="form-label">Father's Name</label>
+            </div>
+            <div class="col-8">
+                {{ form.father_name }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-4">
+                <label class="form-label">Date of Birth</label>
+            </div>
+            <div class="col-8">
+                {{ form.dob }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-4">
+                <label class="form-label">Gender</label>
+            </div>
+            <div class="col-8">
+                {{ form.gender }}
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-4">
+                <label class="form-label">Address</label>
+            </div>
+            <div class="col-8">
+                {{ form.address }}
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-4">
+                <label class="form-label">Upload Photo</label>
+            </div>
+            <div class="col-8">
+                <div class="photo-box">
+                    {{ form.photo }}
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-success w-100 mt-2">Create Voter Card</button>
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,1 @@
+web: gunicorn jango_voter_card.wsgi
