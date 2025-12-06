@@ -88,7 +88,7 @@
         </h2>
 
         <div class="info">
-            <div><span class="label">Name:</span> {{ data.name }}</div>
+            <div><span class="label">Name:</span> {{ data.full_name }}</div>
             <div><span class="label">Father Name:</span> {{ data.father_name }}</div>
             <div><span class="label">Date of Birth:</span> {{ data.dob }}</div>
             <div><span class="label">Address:</span> {{ data.address }}</div>
@@ -96,6 +96,12 @@
         </div>
 
         <div class="photo-box">
+            {% if data.photos %}
+            <img src="{{ data.photos.url }}" width="150">
+             {% else %}
+            <p>No Photo</p>
+            {% endif %}
+
             <img src="{{ data.photos.url }}">
         </div>
 
