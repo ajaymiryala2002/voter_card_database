@@ -27,9 +27,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', voter_form, name='form'),
     path('card/<int:id>/',voter_card, name='card'),
-]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
     

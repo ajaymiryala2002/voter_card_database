@@ -97,13 +97,12 @@
 
         <div class="photo-box">
             {% if data.photos %}
-            <img src="{{ data.photos.url }}" width="150">
-             {% else %}
+            <img src="{{ data.photos.url }}" width="150" height="170" style="border-radius:4px;">
+            {% else %}
             <p>No Photo</p>
             {% endif %}
-
-            <img src="{{ data.photos.url }}">
         </div>
+
 
     </div>
 
