@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from app1.views import voter_form
+from app1.views import voter_form,voter_card
 
 
 
@@ -26,7 +26,7 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', voter_form, name='form'),
-    # path('card/<int:id>/',voter_card, name='card'),
+    path('card/<int:id>/',voter_card, name='card'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
     

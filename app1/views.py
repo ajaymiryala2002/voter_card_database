@@ -33,3 +33,7 @@ def voter_form(request):
     else:
         form = VoterForm()
     return render(request, "voter_form.html", {"form": form})
+
+def voter_card(request, id):
+    data = Voter.objects.get(id=id)
+    return render(request, "voter_card.html", {"data": data})
